@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Card from "./components/Card";
 
-function App() {
+function App({ title }) {
+  const data = [
+    {
+      name: "EARBUDS",
+      price: 100,
+      mrp: 150,
+      img: logo,
+    },
+    {
+      name: "HEADPHONES",
+      price: 200,
+      mrp: 250,
+      img: logo,
+    },
+    {
+      name: "SMART WATCH",
+      price: 150,
+      mrp: 200,
+      img: logo,
+    },
+  ];
+
+  
+
   return (
-    <div className="App">
+    <>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>{title}</p>
+        <div className="product-list">
+          {data.map((item, index) => (
+            <Card key={`card-${index}`} data={item} />
+          ))}
+        </div>
       </header>
-    </div>
+      <footer className="App-footer">
+        <p>Footer Content</p>
+        <Card />
+      </footer>
+    </>
   );
 }
 
