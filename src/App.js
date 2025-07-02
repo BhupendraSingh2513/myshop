@@ -1,6 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Card from "./components/Card";
+import Headings from "./components/Headings";
+import Card2 from "./components/Card2"; 
+import Header from "./components/Header";
 
 function App({ title }) {
   const data = [
@@ -24,22 +27,22 @@ function App({ title }) {
     },
   ];
 
-  
-
   return (
     <>
       <header className="App-header">
+      <Header />
         <img src={logo} className="App-logo" alt="logo" />
         <p>{title}</p>
         <div className="product-list">
-          {data.map((item, index) => (
+        </div>
+        <Headings />
+         <Card2 />
+         {data.map((item, index) => (
             <Card key={`card-${index}`} data={item} />
           ))}
-        </div>
       </header>
       <footer className="App-footer">
         <p>Footer Content</p>
-        <Card />
       </footer>
     </>
   );
